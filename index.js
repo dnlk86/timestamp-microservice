@@ -15,7 +15,7 @@ app.get("/api/:date_string?", function (req, res) {
   let unixDate;
   let utcDate;
   if (date_string) {
-    if (/\-/g.test(date_string)) {
+    if (/\D/.test(date_string)) {
       utcDate = new Date(date_string);
       unixDate = utcDate.getTime();
     } else {
